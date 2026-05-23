@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Auth Callback</title></head>
+<body>
+<h2>Your Token</h2>
+<p id="token">Reading token...</p>
+<script>
+  const hash = window.location.hash.substring(1);
+  const params = new URLSearchParams(hash);
+  const token = params.get('long_lived_token') || params.get('access_token');
+  document.getElementById('token').innerText = token || 'No token found. Check the URL.';
+</script>
+</body>
+</html>
